@@ -82,26 +82,37 @@ while not doExit: #GAME LOOP-----------------------------------
     #pshyics
     if b1.collide(bx, by):#Ball collision with each brick
         bVy *= -1
+        p1Score+= 100
     if b2.collide(bx, by):
         bVy *= -1
+        p1Score+= 100
     if b3.collide(bx, by):
         bVy *= -1
+        p1Score+= 100
     if b4.collide(bx, by):
         bVy *= -1
+        p1Score+= 100
     if b5.collide(bx, by):
         bVy *= -1
+        p1Score+= 100
     if b6.collide(bx, by):
         bVy *= -1
+        p1Score+= 100
     if b7.collide(bx, by):
         bVy *= -1
+        p1Score+= 100
     if b8.collide(bx, by):
         bVy *= -1
+        p1Score+= 100
     if b9.collide(bx, by):
         bVy *= -1
+        p1Score+= 100
     if b10.collide(bx, by):
         bVy *= -1
+        p1Score+= 100
     if b1.collide(bx, by):
         bVy *= -1
+        p1Score+= 100
     
     
     #ball movement
@@ -109,8 +120,8 @@ while not doExit: #GAME LOOP-----------------------------------
     by += bVy
      
     #reflect ball off side walls of screen
-    #if bx < 0 or bx + 20 > 700:
-    #    bVx *= -1
+    if bx < 0 or bx + 20 > 800:
+        bVx *= -1
     
     
     #reflect ball off top and bottom    
@@ -118,21 +129,14 @@ while not doExit: #GAME LOOP-----------------------------------
         bVy *= -1
         
     #ball-paddle reflection    
-    if bx < p1x + 100 and by + 20 > p1y and by < p1y + 20: 
+    if bx < p1x + 100 and bx + 20 > p1x and by + 20 > p1y and by < p1y + 20: #Add a 4th and
          bVx *= -1
          bVy *= -1
      
        
     
-    #reflect ball off side walls of screen, change score 
-    if bx < 0: #this has been split up from right wall collision so we can increase scores
-        bVx *= -1
-        
-   
-    #add score for the right wall here
-    if bx + 20 > 700:
-        bVx*= -1
-        
+  
+
 
     #render section will go here--------------
    
